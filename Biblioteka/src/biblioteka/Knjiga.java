@@ -44,6 +44,12 @@ public class Knjiga {
 	}
 
 	public void setIzdavac(String izdavac) {
+		if(izdavac==null)
+			throw new NullPointerException("Izdavac ne sme biti null");
+		
+		if(izdavac.isEmpty())
+			throw new IllegalArgumentException("Izdavac ne sme biti prazno");
+		
 		this.izdavac = izdavac;
 	}
 
@@ -52,6 +58,9 @@ public class Knjiga {
 	}
 
 	public void setIzdanje(int izdanje) {
+		if(izdanje<1)
+			throw new IllegalArgumentException("Izdanje mora biti jedan ili vece");
+		
 		this.izdanje = izdanje;
 	}
 
